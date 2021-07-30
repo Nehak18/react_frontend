@@ -1,0 +1,8 @@
+/* Style to change separator  */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+}
+.btn-rating:hover{
+    color: orange;
+
+}
