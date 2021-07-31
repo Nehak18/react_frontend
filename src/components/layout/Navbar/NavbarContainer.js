@@ -5,13 +5,20 @@ import Navbarview from './Navbarview';
      constructor(props){
          super(props)
          this.state={
-             
+            prefLang: this.props.i18n.languages[0]
          }
+     }
+     handleChangeLang = (event) => {
+         
+         
+         this.setState({ prefLang: [event.target.value] })
      }
     render() {
         return (
             <div>
-                <Navbarview  />
+                <Navbarview  {...this.props} 
+                 handleChangeLang={this.handleChangeLang} 
+                 prefLang = {this.state.prefLang} />
             </div>
         )
     }

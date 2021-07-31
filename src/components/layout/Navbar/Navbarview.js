@@ -1,10 +1,13 @@
 import React from 'react'
 
 function Navbarview(props) {
+    const{t,i18n}=props;
+    // console.log(t('navbar.sidebar_title',{username:' neha'}));
+    // console.log(i18n.languages[0]);
     return (
         <React.Fragment>
             {/* <!--navbar start--> */}
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark " id="pageTop">
                 {/* <!--Drawer starts--> */}
                 <button className="btn btn-outline-light" data-toggle="drawer" data-target="#shopifyDrawer">
                     <i className="fas fa-sliders-h fa-2x "></i></button>
@@ -12,8 +15,7 @@ function Navbarview(props) {
                     aria-hidden="true" id="shopifyDrawer">
                     <div className="drawer-content drawer-content-scrollable" role="document">
                         <div className="drawer-header bg-dark text-light">
-                            <h4 className="drawer-title" id="drawer-demo-title"><i className="fas fa-user-circle fa-2x mr-2"></i> Hello,
-                                Sign In</h4>
+                            <h4 className="drawer-title" id="drawer-demo-title"><i className="fas fa-user-circle fa-2x mr-2"></i> { t('navbar.sidebar_title') }</h4>
                         </div>
                         <div className="drawer-body">
                             <h6 className="text-muted">HELP & SETTINGS</h6>
@@ -80,8 +82,8 @@ function Navbarview(props) {
                         <div className="dropdown-menu" aria-labelledby="prefLanguageDropdown">
                             <form className="p-3">
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="prefLang" id="englishLang" value="en"
-                                        checked />
+                                    <input className="form-check-input" type="radio" name="prefLang" id="englishLang" value="English"
+                                      onClick={props.handleChangeLang}  checked={ props.prefLang == "English" ? true : false } />
                                     <label className="form-check-label" htmlfor="englishLang">
                                         English <img src="assets/img/flag/english.jpg" style={{marginLeft:7}} height="35"
                                             width="40" alt="uk flag" />
@@ -92,8 +94,8 @@ function Navbarview(props) {
 
 
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="prefLang" id="hindiLang" value="hn"
-                                        checked />
+                                    <input className="form-check-input" type="radio" name="prefLang" id="hindiLang" value="Hindi"
+                                      onClick={props.handleChangeLang}  checked={ props.prefLang == "Hindi" ? true : false }    />
                                     <label className="form-check-label" htmlfor="hindiLang">
                                         Hindi <img src="assets/img/flag/india.png" style={{marginLeft:20}} height="25" width="40"
                                             alt="uk flag" />
@@ -103,8 +105,8 @@ function Navbarview(props) {
                                 <div className="dropdown-divider"></div>
 
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="prefLang" id="marathiLang" value="mr"
-                                        checked />
+                                    <input className="form-check-input" type="radio" name="prefLang" id="marathiLang" value="Marathi"
+                                      onClick={props.handleChangeLang}  checked={ props.prefLang == "Marathi" ? true : false }    />
                                     <label className="form-check-label" htmlfor="marathiLang">
                                         Marathi <img src="assets/img/flag/india.png" style={{marginLeft:2}} height="25" width="40"
                                             alt="uk flag" />
