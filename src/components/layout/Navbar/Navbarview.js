@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 
 function Navbarview(props) {
     const{t,i18n}=props;
@@ -20,7 +21,7 @@ function Navbarview(props) {
                         <div className="drawer-body">
                             <h6 className="text-muted">HELP & SETTINGS</h6>
                             <a href="your_account.html" className="btn btn-dark btn-sm my-2">Your Account</a>
-                            <a href="login.html" className="btn btn-dark btn-sm my-2">Sign In</a>
+                            <Link to="/login" className="btn btn-dark btn-sm my-2">Sign In</Link>
                         </div>
                         <div className="drawer-footer">
                             <button type="button" className="btn btn-warning btn-block " style={{paddingBottom:3}}
@@ -31,7 +32,7 @@ function Navbarview(props) {
                     </div>
                 </div>
                 {/* <!--drawer end--> */}
-                <a className="navbar-brand mx-3" href="#"><img src="assets/img/shopify2.png" height="65" width="100" alt="logo" /></a>
+                <Link className="navbar-brand mx-3" to="/"><img src="assets/img/shopify2.png" height="65" width="100" alt="logo" /></Link>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -129,7 +130,7 @@ function Navbarview(props) {
                         </a>
                         <div className="dropdown-menu" aria-labelledby="userAccount">
                             <div className="d-flex flex-column justify-content-center">
-                                <a href="login.html" className=" btn btn-warning w-75 btn-md mx-auto"><b>Sign In</b></a>
+                                <Link to= "/login" className=" btn btn-warning w-75 btn-md mx-auto"><b>Sign In</b></Link>
 
                                 <small>New Customer?
                                     <a href="register.html">Start Here.</a>
